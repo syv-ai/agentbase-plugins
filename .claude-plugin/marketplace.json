@@ -1,0 +1,22 @@
+{
+  "$schema": "https://code.claude.com/schemas/marketplace.json",
+  "name": "agentbase-plugins",
+  "owner": {
+    "name": "syv.ai",
+    "email": "support@syv.ai"
+  },
+  "plugins": [
+    {
+      "name": "agentbase-core",
+      "source": "./agentbase-core",
+      "description": "Connects Claude Code to the Agentbase MCP and ships a getting-started guidance skill. Install this first.",
+      "version": "1.0.0"
+    },
+    {
+      "name": "agentbase-flows",
+      "source": "./agentbase-flows",
+      "description": "Optional guidance skill for building and debugging Agentbase flows. Requires agentbase-core for the MCP connection.",
+      "version": "1.0.0"
+    }
+  ]
+}

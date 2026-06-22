@@ -1,0 +1,15 @@
+{
+  "name": "agentbase-flows",
+  "displayName": "Agentbase Flows",
+  "version": "1.0.0",
+  "description": "Guidance skill for building, running, and debugging Agentbase flows. Opt-in; relies on agentbase-core for the MCP connection.",
+  "author": {
+    "name": "syv.ai",
+    "email": "support@syv.ai",
+    "url": "https://syv.ai"
+  },
+  "homepage": "https://github.com/syv-ai/agentbase-plugins",
+  "repository": "https://github.com/syv-ai/agentbase-plugins",
+  "license": "MIT",
+  "keywords": ["agentbase", "flows", "syv"]
+}
