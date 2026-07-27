@@ -10,7 +10,7 @@
       "name": "agentbase-core",
       "source": "./agentbase-core",
       "description": "Connects Claude Code to the Agentbase MCP and ships a getting-started guidance skill. Install this first.",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "name": "agentbase-flows",

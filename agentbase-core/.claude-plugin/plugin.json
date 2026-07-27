@@ -1,7 +1,7 @@
 {
   "name": "agentbase-core",
   "displayName": "Agentbase Core",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Connects Claude Code to the Agentbase MCP server and provides getting-started guidance.",
   "author": {
     "name": "syv.ai",
@@ -12,22 +12,10 @@
   "repository": "https://github.com/syv-ai/agentbase-plugins",
   "license": "MIT",
   "keywords": ["agentbase", "mcp", "syv"],
-  "userConfig": {
-    "apiToken": {
-      "type": "string",
-      "title": "Agentbase API Token",
-      "description": "Your personal Agentbase bearer token. Find it in your Agentbase account settings. It is stored securely in your OS keychain and never committed anywhere.",
-      "sensitive": true,
-      "required": true
-    }
-  },
   "mcpServers": {
     "agentbase": {
       "type": "http",
-      "url": "https://api.flows.syv.ai/mcp/",
-      "headers": {
-        "Authorization": "Bearer ${user_config.apiToken}"
-      }
+      "url": "https://api.agentbase.dk/mcp"
     }
   }
 }
