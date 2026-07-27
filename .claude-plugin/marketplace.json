@@ -17,6 +17,12 @@
       "source": "./agentbase-flows",
       "description": "Optional guidance skill for building and debugging Agentbase flows. Requires agentbase-core for the MCP connection.",
       "version": "1.0.0"
+    },
+    {
+      "name": "agentbase-browser",
+      "source": "./agentbase-browser",
+      "description": "Danske skills der hjælper ikke-tekniske brugere med at bygge AgentBase-flows fra browseren, oven på den tilsluttede AgentBase-connector.",
+      "version": "0.1.0"
     }
   ]
 }
