@@ -1,0 +1,50 @@
+name: MCP connection drift check
+
+# Verifies the live AgentBase MCP still matches what the packs ship (endpoint
+# host + OAuth auth model). The failure this exists for is the server moving
+# under a still repo — caught by the weekly cron, where a red check alone would
+# go unseen, so a scheduled/dispatch failure also opens (or comments on) an issue.
+
+on:
+  pull_request:
+  schedule:
+    - cron: "17 6 * * 1" # Mondays 06:17 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  drift:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check MCP connection contract
+        run: bash scripts/check-mcp-drift.sh
+
+      - name: Open an issue on drift
+        # On a PR the failing check is visible to the author; a cron/dispatch run
+        # has no PR, so surface it as an issue instead of a silent red check.
+        if: failure() && github.event_name != 'pull_request'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          title="MCP connection drift detected"
+          body=$(printf '%s\n' \
+            "The scheduled MCP drift check failed." \
+            "" \
+            "The AgentBase MCP connection contract no longer matches what the plugins ship — the endpoint host moved, OAuth is no longer advertised, or a manifest regressed to a static-token auth model." \
+            "" \
+            "Failing run: $RUN_URL" \
+            "" \
+            "Fix: update the canonical URL / auth model in the manifests and skills (and scripts/check-mcp-drift.sh) to match the live server, then re-run this workflow.")
+          existing=$(gh issue list --state open --search "in:title \"$title\"" --json number --jq '.[0].number // empty')
+          if [ -n "$existing" ]; then
+            gh issue comment "$existing" --body "$body"
+          else
+            gh issue create --title "$title" --body "$body" --label drift \
+              || gh issue create --title "$title" --body "$body"
+          fi
