@@ -1,8 +1,8 @@
 {
-  "name": "agentbase-core",
-  "displayName": "Agentbase Core",
-  "version": "1.0.2",
-  "description": "Connects Claude Code to the Agentbase MCP server and provides getting-started guidance.",
+  "name": "agentbase-browser",
+  "displayName": "AgentBase i browseren",
+  "version": "0.1.0",
+  "description": "AgentBase-connector plus danske skills, der hjælper ikke-tekniske brugere med at bygge og rette AgentBase-flows fra browseren.",
   "author": {
     "name": "syv.ai",
     "email": "support@syv.ai",
@@ -11,7 +11,7 @@
   "homepage": "https://github.com/syv-ai/agentbase-plugins",
   "repository": "https://github.com/syv-ai/agentbase-plugins",
   "license": "MIT",
-  "keywords": ["agentbase", "mcp", "syv"],
+  "keywords": ["agentbase", "flows", "browser", "dansk", "skills"],
   "mcpServers": {
     "agentbase": {
       "type": "http",
