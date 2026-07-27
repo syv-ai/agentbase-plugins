@@ -1,7 +1,7 @@
 {
   "name": "agentbase-core",
   "displayName": "Agentbase Core",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Connects Claude Code to the Agentbase MCP server and provides getting-started guidance.",
   "author": {
     "name": "syv.ai",

@@ -16,17 +16,18 @@ Afgør det **først**, før du forklarer noget andet: forsøg at bruge et AgentB
 
 ## Trin 2: Forbind AgentBase (connector mangler)
 
-Assistenten kan **ikke** tilføje forbindelsen selv — det er et manuelt trin i indstillingerne. Guid brugeren præcist igennem det:
+Assistenten kan **ikke** aktivere forbindelsen selv, men dette plugin gør det næsten ét klik: connectoren følger med pluginnet og er færdig-udfyldt.
 
-**I browseren (claude.ai):**
-1. Åbn linket til at tilføje en connector: `https://claude.ai/new?modal=add-custom-connector#settings/customize-connectors`
-2. Vælg at tilføje en **brugerdefineret** connector.
-3. Giv den et navn (fx `AgentBase`) og indsæt denne adresse: `https://api.agentbase.dk/mcp`
-4. Tryk **Add**, log ind med din AgentBase-konto, og godkend adgangen.
+**Nemmest (via pluginnet):**
+1. Åbn **Indstillinger → Plugins → "AgentBase i browseren" → fanen Connectors**.
+2. Tryk **Install** ud for `agentbase` — navn og adresse (`https://api.agentbase.dk/mcp`) er allerede udfyldt.
+3. Tryk **Add**, log ind med din AgentBase-konto, og godkend adgangen.
 
-**I Claude Code (terminal):** kør `/mcp` og følg login-flowet.
+**Alternativt (manuelt):** åbn `https://claude.ai/new?modal=add-custom-connector#settings/customize-connectors`, tilføj en brugerdefineret connector med navnet `AgentBase` og adressen `https://api.agentbase.dk/mcp`, og log ind.
 
-Når du er logget ind, er værktøjerne klar med det samme (der er ingen token at kopiere — det hele kører over sikker OAuth-login). Bed brugeren sige til, og prøv Trin 1 igen.
+**I Claude Code (terminal):** kør `/mcp`.
+
+Der er ingen token at kopiere — det hele kører over sikker OAuth-login. Virker en connector ikke (fx peger den på en gammel `flows.syv.ai`-adresse), så ret adressen til `https://api.agentbase.dk/mcp` eller slet den og brug den prefyldte. Bed brugeren sige til, og prøv Trin 1 igen.
 
 ## Trin 3: Orientér brugeren — hvad kan de nu?
 
@@ -49,6 +50,6 @@ Forbindelsen virker. Forklar kort, hvad AgentBase gør, og hvad det næste skrid
 
 ## Vigtigt
 
-- Led **aldrig** med `/mcp`, `/plugin`, en API-token/keychain eller adressen `api.flows.syv.ai` — det er forældet og forvirrer brugeren. Den rigtige adresse er `https://api.agentbase.dk/mcp`, og forbindelsen laves manuelt som i Trin 2.
-- Assistenten installerer ikke connectoren og bygger ikke uden om den — den guider brugeren gennem det manuelle trin og bygger så *oven på* den tilsluttede forbindelse.
+- Led **aldrig** med `/mcp`, `/plugin`, en API-token/keychain eller adressen `api.flows.syv.ai` — det er forældet og forvirrer brugeren. Den rigtige adresse er `https://api.agentbase.dk/mcp`, og forbindelsen tilføjes som i Trin 2.
+- Assistenten aktiverer ikke connectoren og bygger ikke uden om den — den guider brugeren gennem det ene trin og bygger så *oven på* den tilsluttede forbindelse.
 - Skriv alt, brugeren ser, på **dansk**.

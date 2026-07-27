@@ -2,7 +2,7 @@
   "name": "agentbase-browser",
   "displayName": "AgentBase i browseren",
   "version": "0.1.0",
-  "description": "Danske skills der hjælper ikke-tekniske brugere med at bygge AgentBase-flows fra browseren, oven på den tilsluttede AgentBase-connector.",
+  "description": "AgentBase-connector plus danske skills, der hjælper ikke-tekniske brugere med at bygge og rette AgentBase-flows fra browseren.",
   "author": {
     "name": "syv.ai",
     "email": "support@syv.ai",
@@ -11,5 +11,11 @@
   "homepage": "https://github.com/syv-ai/agentbase-plugins",
   "repository": "https://github.com/syv-ai/agentbase-plugins",
   "license": "MIT",
-  "keywords": ["agentbase", "flows", "browser", "dansk", "skills"]
+  "keywords": ["agentbase", "flows", "browser", "dansk", "skills"],
+  "mcpServers": {
+    "agentbase": {
+      "type": "http",
+      "url": "https://api.agentbase.dk/mcp"
+    }
+  }
 }
